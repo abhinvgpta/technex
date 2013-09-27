@@ -1,0 +1,129 @@
+<html>
+<head>
+		<link rel="stylesheet" href="reset.css">
+<script src="jquery-2.0.0.js" type="text/ecmascript"></script>
+
+</head>
+<script>
+	$(document).ready(function(){
+		
+		var elements=$('#guest_pics img.pics').length;
+		centerX = $('#guest_pics').width()/2;
+		centerY = $('#guest_pics').height()/2;
+		img_Y = $('#guest_pics img').height()/2;
+		mike_Y = $('#guest_pics img#mike').height()/2;
+		$('#guest_pics img#mike').css({'left':''+centerX-mike_Y+'px','top':''+centerY-mike_Y+'px'});
+		
+		angle = 0;
+	//	theta = 360/elements;
+		theta = 120;
+		radfac = 3.14/180;
+		radius = 80;
+		for(var i=0;i<elements;i++){
+		x = centerX - radius*Math.cos(angle*radfac);
+		y = centerY - radius*Math.sin(angle*radfac);
+		$('#guest_pics img.pics').eq(i).css({'left':''+x-img_Y+'px'});
+		$('#guest_pics img.pics').eq(i).css({'top':''+y-img_Y+'px'});
+		angle += theta;
+		if(i == 2){
+			radius += 80;
+			angle+=60*Math.random();
+			theta = 360/(elements - 3);
+		}
+		
+		}
+		$('#bubble').css({'height':'400px','width':'400px','margin-top':'0px','left':'0px','opacity':'0','-webkit-transition':'1s linear'});
+		
+		update = setInterval(pop,400);
+		var qq=0
+		function pop(){
+			if(qq==0){
+			$('#guest_pics img.pics.layer1').css({'-webkit-transform':'scale(1)','opacity':'1','-webkit-transition':'.3s'});
+			qq++;
+			}else{
+			$('#guest_pics img.pics').css({'-webkit-transform':'scale(1)','opacity':'1','-webkit-transition':'.3s'});
+			clearInterval(update);
+			}
+		}
+		
+	})
+</script>
+<style>
+#guest_pics{
+	position:absolute;
+	height:400px;
+	width:400px;
+	border:1px solid black;
+}
+#guest_pics img.pics{
+	position:absolute;
+	//display:none;
+	
+	height:60px;
+	opacity:0;
+	-webkit-transform:scale(0);
+	border-radius:50px;
+}
+#guest_pics img.pics:hover{
+	
+height:80px;
+
+}
+.bubble{
+	position:absolute;
+	margin-top:200px;
+	padding : 0;
+	left:200px;
+	height:0px;
+	width:0px;
+	border-radius:200px;
+	border:4px grey solid;
+	
+	
+}
+#mike{
+	position:absolute;
+	display:block;
+	height:60px;
+}
+
+
+</style>
+<body>
+<!--<div id="guest_pics">
+<div id="bubble" class="bubble" ></div>
+
+<img class="pics layer1" src="indira.jpg">
+<img class="pics layer1" src="mustanwala.jpg">
+<img class="pics layer1" src="oopali.jpg">
+<img class="pics" src="pawantoon.jpg">
+<img class="pics" src="ravi.jpg">
+<img class="pics" src="varun.jpg">
+<img class="pics" src="varun.jpg">
+<img class="pics " src="oopali.jpg">
+<img id="mike" src="mike.png">
+
+</div>-->
+<table border="1px" >
+<tr><td><tr>
+<td>a</td><td rowspan="4"></td>
+</tr>
+<tr>
+<td>a</td>
+</tr><tr>
+<td>a</td>
+</tr>
+<tr>
+<td>a</td>
+</tr><tr>
+<td>a</td>
+</tr>
+<tr>
+<td>a</td>
+</tr><tr>
+<td>a</td>
+</tr>
+</td><td >b</td></tr>
+</table>
+</body>
+</html>

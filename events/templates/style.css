@@ -1,0 +1,561 @@
+/*--------------- THE S5TYLING STYLESHEET, invlolves color and other styling options-----------------------*/
+
+/*-- -------------------------SECONDARY HEADER---------------------*/
+::-moz-selection{
+	background-color:white;
+}
+::selection{
+	background-color:white;
+}
+
+#head_nav{position:absolute;
+		margin-left:400px;
+}
+#head_nav >ul >li{display:inline-block;
+}
+#head_nav >ul >li>ul>li{
+	display:block;
+}
+
+/*-- -------------------------SECONDARY HEADER---------------------*/
+h1{font-family:"impact";
+			font-size:100px;
+			color:white;
+			text-align:center;
+			letter-spacing:-2px;
+			text-shadow:-1px 1px 0px black;
+			margin-top:50px;
+	}
+
+#main_head{-webkit-box-shadow:0px 5px 10px black;
+	box-shadow:0px 5px 10px #9e9e9e;}
+
+#main_head h1{font-family:"Resident evil";
+				color:#950E00;
+				padding-top:10px;
+				padding-left:10px;
+				text-align:left;
+				margin-top:0px;}
+
+				
+/*------------------------------Home------------------------*/
+/*-------------------------------------------------- DROP DOWN--------------------------------*/
+#sec_head{position:fixed;
+			top:0px;
+			width:100%;
+			height:50px;
+			background:rgba(255,255,255,0.3);
+			z-index: 1000;
+			-webkit-transition:.3s;
+			transition:.3s;
+			}
+#sec_head{-webkit-box-shadow:0px 0px 10px #9e9e9e;}
+
+#sec_head h1{font-family:"Resident evil";
+				float:left;
+				color:#950E00;
+				font-size:40px;
+				padding-top:10px;
+				padding-left:10px;
+				/*border:solid 1px red;*/
+				width:200px;
+				margin-top:0px;}
+
+#drop_down{float:right;
+	margin-right:100px;
+}
+
+#drop_down>ul>li{display:inline-block;
+					width:130px;
+					/*border:solid 1px red;*/
+					background:#818286;
+					padding-top:5px;
+					padding-bottom:3px;
+					-webkit-border-radius:5px;
+					border-radius:5px;
+					margin-top:15px;
+					margin-left:15px;
+					vertical-align:top;
+					position:relative;
+					height:20px;
+					text-align:center;
+					text-overflow: ellipsis;
+					}
+
+#drop_down>ul>li>a{color:white;}
+
+#drop_down>ul>li>ul{position:relative;
+						left:-99999px;
+						opacity:0;
+						-webkit-transition:opacity .5s ease-out;}
+						
+#drop_down>ul>li>ul>li{background:#dadbdd;
+					padding-top:8px;
+					padding-bottom:5px;
+					width:130px;
+					}
+
+#drop_down li:hover{background:#db2228;
+								-webkit-transition:background .3s ease;}
+			
+#drop_down a:hover{color:white;
+								-webkit-transition:color .3s ease;}			
+			
+#drop_down>ul>li>ul>li:last-child{-webkit-border-bottom-right-radius:5px;
+									-webkit-border-bottom-left-radius:5px;
+									border-bottom-left-radius:5px;
+									border-bottom-right-radius:5px;}
+
+#drop_down>ul>li>ul>li:first-child{-webkit-border-top-right-radius:5px;
+									-webkit-border-top-left-radius:5px;
+									border-top-left-radius:5px;
+									border-top-right-radius:5px;}
+			
+#drop_down a{color:#3f3f3f;}
+
+#drop_down>ul>li:hover>ul{left:0px;
+							top:7px;
+							opacity:1;}
+
+
+/*-------------------------------------------------- DROP DOWN--------------------------------*/
+
+
+#home{
+	background:url('TECHNEX_HOME.png');
+	
+}
+/* -------------------------------------------- EVENTS STYLING ----------------------------------------*/
+
+#events{background:#dadbdd;}
+
+
+.events_icons{
+	width:1000px;
+	margin-left:auto;
+	margin-right:auto;
+	/*border:solid 1px green;*/
+	text-align:center;
+}
+
+
+.events_icons li{
+	display:inline-block;
+	width:160px;
+	height:160px;
+	/*border:solid 1px red;*/
+	margin-top:40px;
+	margin-left:10px;
+	
+	
+}
+
+.events_icons li{background:url(event_img/circle.png) no-repeat center;}
+
+.events_icons img{display:block;
+					width:100px;
+				/*	border:solid 1px red;*/
+					margin-left:30px;
+					margin-top:40px;
+					}
+
+
+.events_icons li a{display:block;
+					margin-top:50px;
+					text-decoration:none;
+					color:#3c3c3c;
+					font-size:17px;
+					}
+.events_icons li a font{display:block;
+					margin-top:30px;
+
+					}
+
+
+.events_icons li:hover{background:url(event_img/ring.png) no-repeat center;
+}
+
+			
+
+/* -------------------------------------------- EVENTS STYLING ----------------------------------------*/	
+
+
+/*----------------------------------------------- WORKSHOP--------------------------------------------*/	
+
+#workshops{background:#35acd4;}
+
+#workshops a{text-decoration:none;
+				color:black;}
+.workshop_bubble{
+	position:absolute;
+	background:white;
+	border-radius:150px;
+	width:300px;
+	height:300px;
+	text-align:center;
+	opacity:0;
+	
+/*	-webkit-transition:.5s;*/
+	}
+.workshop_bubble span{
+	display:inline-block;
+				margin-top:140px;
+}
+#internal{
+			
+			left:500px;
+			top:200px;
+			}
+
+#internal span{
+				}
+
+#external{
+			left:500px;
+			top:200px;
+		}
+
+#external span{
+				}
+				
+.workshop_bubble:hover{
+	background:rgb(180,180,180);
+	/*-webkit-transition:0s;*/
+	color:white;
+}
+
+
+
+
+
+/*----------------------------------------------- WORKSHOP--------------------------------------------*/		
+
+/*---------------------------------------------- GUEST LECTURES -------------------------------------*/
+
+#guest_lectures{background:#dadbdd;
+				overflow:hidden;}
+
+
+#guest_pics{
+	position:absolute;
+/*	background:rgb(0,0,50);*/
+	height:400px;
+	width:400px;
+	left:10px;
+	border:2px white dashed;
+	-moz-border:2px white dashed;
+	border-radius:200px;
+/*	overflow:hidden;*/
+}
+#guest_pics img.pics{
+	position:absolute;
+	/*display:none;*/
+	cursor:pointer;
+	height:60px;
+	opacity:0;
+	-webkit-transform:scale(0);
+	transform:scale(0);
+	border-radius:50px;
+}
+#guest_pics img.pics:hover{
+
+height:80px;
+
+}
+.bubble{
+	position:absolute;
+	top:200px;
+	padding : 0px;
+	left:200px;
+	height:0px;
+	width:0px;
+	border-radius:200px;
+	border:4px grey solid;
+
+	
+}
+#mike{
+	position:absolute;
+	display:block;
+	height:60px;
+}
+#guest_content{
+	position:absolute;
+	display:none;
+	left:415px;
+	width:850px;
+	height:450px;
+	overflow:auto;
+/*	border:1px solid black;*/
+}
+.guest_info{
+	position:absolute;
+	display:none;
+	padding:20px;
+	line-height:30px;
+	left:0px;
+	color:#3c3c3c;
+/*	width:100%;*/
+/*	border:1px solid green;*/
+}
+.guest_info h1{
+	font-family:"open sans";
+	font-size:30px;
+	margin-top:20px;
+	color:red;
+	text-shadow:none;
+}
+.guest_info.active{
+	display:block;
+}
+
+
+
+
+
+/*---------------------------------------------- GUEST LECTURES -------------------------------------*/
+
+
+/*
+#register{
+	position:fixed;
+	right:-20px;
+	top:-25px;
+	z-index:10001;
+}
+#register img{
+	width:150px;
+}*/
+/* ---------------------------------------- SPONSORS-----------------------------------*/
+
+
+#sponsors{background:#dadbdd;}
+
+#sponsors img{max-width:200px;
+				max-height:200px;
+				display:inline-block;
+				margin:10px;
+				
+				}
+/*.sponsors {margin-left:10px;
+			margin-top:10px;
+			display:inline-block;
+			width: 120px;
+			background:#dadbdd;}
+
+.sponsors img{max-width:120px;
+				max-height:100px;
+			}
+*/
+#sponsor_container{border:solid 1px black;
+					margin-left:auto;
+					margin-right:auto;
+					height:495px;
+					width:1100px;
+					background:white;
+					overflow:hidden;
+					border-radius:3px;
+					box-shadow:0px 0px 10px black;
+					}
+#sponsor_list{float:left;
+				width:250px;
+				/*border:solid 1px green;*/}
+
+#sponsor_container li{display:block;
+					/*border:solid 1px green;*/
+					padding-top:6px;
+					padding-bottom:4px;
+					padding-left:4px;
+					width:250px;
+					text-align:left;
+					-webkit-transition:all .3s ease;
+					cursor:hand;
+					border-radius:3px;
+					}
+
+#sponsor_container li:hover{background:#db2228;
+							color:white;}
+#sponsor_container li.active{
+	background:#db2228;
+	color:white;
+}
+
+#sponsor_img{/*border:solid 2px blue;*/
+				
+				width:850px;
+				height:490px;
+				text-align:center;
+				overflow:auto;
+				}
+.spnsr_img {
+	display:block;
+}
+/*.spnsr_img.active{
+	display:block;
+}*/
+.spnsr_img img{
+	position:relative;
+	display:inline-block;
+}
+/* ---------------------------------------- SPONSORS-----------------------------------*/
+
+/*------------------------hospitality----------------*/
+/*--------------FORM STYLING--------------------*/
+#hospitality{
+	background:#d82727;
+}
+#hosp{width:900px;
+	position:relative;
+	display:block;
+		margin-top:30px;
+		padding-top:10px;
+		padding-bottom:20px;
+		margin-left:auto;
+		margin-right:auto;
+/*		background: radial-gradient(at 50% 50%,#ebebeb,/*#d5d4d4//#d6d6d6);*/
+		background:white;
+		border-radius:10px;
+		-webkit-border-radius:10px;
+		box-shadow:0px 0px 15px black;
+		-webkit-box-shadow:0px 0px 15px black;
+		height:400px;
+		text-align:center;
+		}
+		
+
+
+/*#clmns label{display:inline-block;
+				width:200px;
+				padding-top:20px;
+				padding-left:50px;
+				text-align:right;
+				}
+	
+#clmns input[type="text"],input[type="email"]{width:200px;
+												border:none;
+												height:0px;
+												font-family:"open sans";
+												-webkit-box-shadow: 1px 2px 0px 0px #7c7c7c;
+												box-shadow:1px 2px 0px 0px #7c7c7c;
+												}
+.txt{width:200px;
+border:none;
+height:0px;
+font-family:"open sans";
+-webkit-box-shadow: 1px 2px 0px 0px #7c7c7c;
+box-shadow:1px 2px 0px 0px #7c7c7c;
+}
+
+.txt:focus{
+	width:225px;
+}
+
+#col1{
+		
+		padding-right:50px;
+		text-align:left;
+		border:solid 1px red;}
+
+#col2{text-align:center;}*/
+
+
+
+
+/*--------------FORM STYLING--------------------*/
+#hosp p{
+	margin-top:80px;
+	margin-left:80px;
+	margin-right:80px;
+	text-align:left;
+}
+#hosp_form{
+/*	border:1px solid red;*/
+	position:relative;
+	display:block;
+	margin-top:0px;
+}
+
+a{
+	text-decoration:none;
+}
+#hosp_form p{
+	margin:50px auto;
+	background:#35acd4;
+	border-radius:4px;
+	font-size:20px;
+	width:350px;
+	height:50px;
+	color:black;
+}
+#hosp_form p img{
+	padding:5px;
+}
+#hosp_form p font{
+	position:absolute;
+	padding:13px;
+	color:white;
+}
+#hosp_form p:hover{	box-shadow:0px 0px 15px #3c3c3c;
+}
+#hosp_contacts{
+	display:block;
+}
+#hosp_contacts > ul >li{
+	display:inline-block;
+	margin:20px 20px 20px;
+}
+/*-------------------------hospitality------------------*/	
+/*---------------------------Campus Ambassdor-----------*/
+#campus_ambassador{
+	background:#db2228;
+	color:white;
+}
+#ca_intro{
+	position:relative;
+	width:900px;
+	margin-left:auto;
+	margin:100px auto;
+}
+#ca_list h2{
+	text-align:center;
+/*	margin:30px auto auto;*/
+	font-size:30px;
+	height:40px;
+	padding-top:10px;
+	background:white;
+	color:#3c3c3c;
+	cursor:pointer;
+}
+#ca_list h2 img{
+position:absolute;
+padding-top:10px;
+	right:10px;
+	top:0px;
+
+}
+
+#ca_list{
+	position:absolute;
+	width:500px;
+	height:50px;
+	bottom:110px;
+	margin-top:100px;
+	margin-left:400px;
+	border-radius:4px;
+	overflow:hidden;
+/*	display:none;*/
+}
+#ca_lis{
+	background:#818286;
+	height:480px;
+	overflow:scroll;
+	bottom:1px;
+	display:none;
+}
+/*------------campus ambassdor-----------------*/		
+
+
+/*---------------------------Clutch-----------------*/
+#clutch{
+	background:#35acd4;
+}

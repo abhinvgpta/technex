@@ -1,0 +1,17 @@
+# Create your views here.
+# Create your views here.
+from django.shortcuts import render_to_response
+from datetime import datetime
+from django.http import HttpResponseRedirect, HttpResponse
+from django.template import RequestContext
+from django.db import connection, transaction
+from events.models import Event_Options , Event,ParentEvents
+def event(request,event):
+    #e1=Event.objects.all()
+    p=ParentEvents.objects.all()
+	
+    e=Event.objects.filter(name=event)
+    sub_options=Event_Options.objects.filter(event=e).all()
+    
+    #return HttpResponse(str(sub_options[1]))
+    return render_to_response("event.html",{"suboptions":sub_options,"event":e,"parent":p,},RequestContext(request))

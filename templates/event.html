@@ -1,0 +1,471 @@
+﻿<html>
+<head>
+		<link rel="stylesheet" href="reset.css">
+<script src="jquery-1.3.2.min.js" type="text/ecmascript"></script>
+<script src="main.js" type="text/javascript"></script>
+<link rel="stylesheet" href="main.css">	
+<link rel="stylesheet" href="style.css">	
+	<link rel="stylesheet" href="scroll.css">
+</head>
+<script>
+$(document).ready(function(){
+	var y=$('.side_info').height();
+	var xx=$('.view_port').length;
+	for(var i=0;i<xx;i++){
+	h=$('.sec_nav').eq(i).height();
+	$('.sec_nav').eq(i).css({'top':''+y/2-h/2+'px'});
+	}
+	$('.sec_nav a').click(function(e){
+		e.preventDefault();
+		var a=false;
+		var link = $(this).attr('href');
+	//	alert(link);
+	//	var l ='.active .info:not('+link+')';
+		$(link).siblings().fadeOut('fast',function(){
+		$(this).animate({'left':'0px'},'fast',function(){
+		$(link).fadeIn('fast');
+		});});
+	/*	$(link).siblings().fadeOut({duration:"fast",complete:function(){
+			$(link).fadeIn("slow");
+		}});*/
+
+		return false;
+	});var a= true; 
+	$(".side_info").mouseover(function(e) {
+		a=true;
+		show_secnav();
+		
+	});
+	$(".sec_nav ul li").mouseover(function(e) {
+		a=true;
+		show_secnav();
+		
+	});
+	
+		$(".info").mouseover(function(e) {
+		a=false;
+		show_secnav();
+	});
+		function show_secnav(){
+	if(a==true){
+	$(".sec_nav ul ").css({"left":"0px"});
+	}
+	else{
+	$(".sec_nav ul").css({"left":"-150px"});
+	}
+}
+})
+$(document).ready(function(e) {
+	$("header nav a:not(a:last)").hover(function(){
+			$(this).siblings('div').css({opacity:1});
+		},
+		function(){
+			$(this).siblings('div').css({opacity:0});
+			}
+	);
+});
+</script>
+<style>
+/*#sec_head{position:fixed;
+			top:0px;
+			width:100%;
+			height:50px;
+			background:white;
+			z-index: 1000;
+			-webkit-transition:.3s;
+			}
+#sec_head{-webkit-box-shadow:0px 0px 10px #9e9e9e;}
+a{
+	text-decoration:none;
+}
+#sec_head h1{font-family:"Resident evil";
+				color:#950E00;
+				font-size:40px;
+				padding-top:10px;
+				padding-left:10px;
+				margin-top:0px;}*/
+
+</style>
+<body >
+<header id="sec_head">
+				
+				<a href="technex_home.html"><h1>TECHNEX</h1></a>
+				
+	<nav id="drop_down">
+			<ul>
+				<li><a href="technex_home.html">Home</a>
+				
+					<ul>
+						<li><a href="technex_home.html#events">Events</a></li>
+						<li><a href="technex_home.html#workshops">Workshops</a></li>
+						<li><a href="technex_home.html#hospitality">Hospitality</a></li>
+						<li><a href="technex_home.html#guest_lectures">Guest lectures</a></li>
+						<li><a href="technex_home.html#sponsors">Sponsors</a></li>
+						<li><a href="technex_home.html#clutch">Clutch</a></li>
+					</ul>
+				</li>
+				<li><a href="technex_home.html">Events</a>
+				<ul  >
+                            <li><a href="http://www.technex.in/#events/robotrix/" class="">Robotrix</a></li>
+                            <li><a href="http://www.technex.in/#events/xtreme-engineering/" class="">Xtreme Engineering</a></li>
+                            <li><a href="http://www.technex.in/#events/e-summit/" class="">E-Summit</a></li>
+                            <li><a href="./modex.html" class="">Modex</a></li>
+                            <li><a href="http://www.technex.in/#events/greenx/">GreenX</a></li>						 							 
+						   <li><a href="http://www.technex.in/#events/byte-bits/" class="">Byte the Bits</a></li>
+                            <li><a href="http://www.technex.in/#events/balvigyaan/">Balvigyaan</a></li>
+                            <li><a href="http://www.technex.in/#events/spot-events/" class="">On Spot Events</a></li>
+                            
+                            <li><a href="http://www.technex.in/#events/attractions/" class="">Attractions</a></li>
+                           
+                        </ul>
+				<li><a href="#">Modex</a>
+					
+				</li>
+			</ul>
+			
+		</nav>
+		
+				
+			</header>
+
+<div class="side_bar" id="side_bar">
+				
+				<nav>
+					<ul>
+						<li><a class="side_menu active" href="#modex_home" ><img src="a.png"><font>Modex</font></a></li>
+						<li><a class="side_menu " href="#green_tech" ><img src="a.png"><font>Green Tech</font></a></li>
+						<li><a class="side_menu" href="#social_rural"><img src="a.png"><font>Social Rural</font></a></li>
+						<li><a class="side_menu" href="#health_care"><img src="a.png"><font>Health Care</font></a></li>
+						<li><a class="side_menu" href="#open_simulation"><img src="a.png"><font>Open Simulation</font></a></li>
+						<li><a class="side_menu" href="#open_hardware"><img src="a.png"><font>Open Hardware</font></a></li>
+					</ul>
+				</nav>
+				
+			</div>
+<div class = "view_port active" id="modex_home">
+<div class="side_info" >
+					<h1>Modex</h1>
+					
+					</div>
+				
+				<nav class="sec_nav">
+					<ul><img src="more.png">
+					{%for event in suboptions%}
+						<li><a href="#modex_{{event.label}}">{{event.label}}</a></li>{%endfor%}
+						<li><a href="#modex_task">Task</a></li>
+						<li><a href="#modex_team_specifications">Team Specifications</a></li>
+						<li><a href="#modex_rounds">Rounds</a></li>
+						<li><a href="#modex_rules">Rules</a></li>
+						<li><a href="#modex_contacts">Contacts</a></li>
+					</ul>
+					
+				</nav>
+		
+				
+			<div class="info_container" >
+				<div class="info active" id="modex_intro">
+				<h1>Introduction</h1>
+				<div id="" class="tab-pane"><blockquote>
+				<hr>
+“Give me a lever long enough and a fulcrum on which to place it, and I shall move the world”
+<small>Archimedes</small>
+</blockquote>
+
+<p>Innovation has been the prime tool for development since the beginning of human civilization. Human mind always has a plethora of ideas and has the dexterity to mould them meticulously. The maxim “Necessity is the mother of invention” rightly clarifies difficult situations inspire ingenious solution. Man has found various ways to quench his thirst for comfort and knowledge. Through the shackles of time, the discovery of fire to miniaturization of complicated circuits into ICs and nanochips, the evolution of our race has revolutionized living. The savvy and sophisticated life today is an outcome of keen observation, ceaseless trials and dedicated learning.</p>
+<p> Modex has always been a platform to bring forth the latent Einstein inside, sculpt the heuristic minds and ideas reflecting the modern world.&nbsp;Carrying this legacy to even greater heights this year ,we  invite you to present your ideas…Turn your eureka sparkle into an engineered model… Buckle up and be a part!!!</p>
+<p>To download the abstract <a href="https://dl.dropbox.com/u/80178480/Abstract_Modex%2713.doc">click here</a></p>
+</div>
+				</div>
+				<div class="info" id="modex_task">
+				<h1>Task</h1>
+				
+				<div id="" class="tab-pane">
+				<hr>
+				To construct a working/Non-working Model which can increase the efficiency of present working systems based on the given categories. Consider the aspects of practical application of the model considering cost aspects and its impact on market. 
+				</div>
+				</div>
+				
+				<div class="info" id="modex_team_specifications">
+				<h1>Team Specifications</h1>
+				<div id="" class="tab-pane">
+				<hr>
+				<ol>
+<li>A team can consist of maximum 4 members.</li>
+<li> Students from different educational institutions can form a team.</li>
+</ol></div>
+				</div>
+				
+				<div class="info" id="modex_rounds">
+				<h1>Rounds</h1>
+				<div id="" class="tab-pane">
+				<hr>
+				<ol>
+  <li> ABSTRACT ROUND - A soft copy of project abstract has to be submitted before 15th Feb’2013.The abstract format could be downloaded from the website. The abstract should be in Times New Roman, font 12.Teams should send their pseudocode in their abstract(if any).</li>
+<li> VIDEO ROUND – A video of working model has to be submitted by 28th Feb’2013</li>
+<li> MODELS ROUND – The selected models have to be presented during TECHNEX’13 due on 7th to 8thMarch.(except Cyber Modex).</li>
+<li> PRESENTATION ROUND – Groups shortlisted in model round have to give a PowerPoint presentation on 9th March. The time allotted to each presentation would be 5 minutes.</li>
+</ol></div>
+				</div>
+				
+				<div class="info" id="modex_rules">
+				<h1>Rules</h1>
+				<div id="" class="tab-pane">
+				<hr>
+				<ol>
+<li> Selected teams would be informed by mail or call one week prior to the event.</li>
+<li> All teams must carry three copies of abstract along with them.</li>
+<li> 220V,50Hz standard AC supply will be provided.</li>
+<li>The teams must adhere to the spirit of healthy competition.</li>
+<li> Judges reserve the right to disqualify any team indulging in misbehavior.</li>
+<li>Every team has to report 30mins prior to the event start on the event site.</li>
+<li> Any team that is not ready at the time specified will be disqualified from the competition automatically</li>
+<li>All students should carry a valid identity card of their respective educational institutes to participate in the event.</li>
+<li>Teams have to submit their final code used(if any)</li>
+<li> Decision of the judges shall be treated as final and binding on all.</li>
+</ol></div>
+				</div>
+				
+				<div class="info" id="modex_contacts">
+				<h1>Contacts</h1>
+				<div id="" class="tab-pane">
+				<hr>
+				<p>Abstracts could be mailed to <a href="mailto:praveen.ksharma.bce10@iitbhu.ac.in">praveen.ksharma.bce10@iitbhu.ac.in</a> . Subject of the mail should be in the form of Abstract_Event name(Category name).</p>
+<br><br><li>
+Praveen Kumar Sharma <ul type="none"><li> +91-9793747296</li><li><a href="mailto:praveen.ksharma.bce10@iitbhu.ac.in">praveen.ksharma.bce10@iitbhu.ac.in</a><br></li></ul> 
+</li><li>Srijan Misra		<ul type="none"><li>  +91-9415526035</li><li><a href="mailto:srijan.misra.cse10@iitbhu.ac.in">srijan.misra.cse10@iitbhu.ac.in</a><br></li></ul> 
+</li><li>
+Prabhakar Gautam  <ul type="none"><li>    +91-9452406186	</li><li><a href="mailto:prabhakar.gautam.min10@iitbhu.ac.in">prabhakar.gautam.min10@iitbhu.ac.in</a>
+<br></li></ul></li><li>Kapil Paliwal <ul type="none"><li>                          +91-8960876152    </li><li> <a href="mailto: kapil.paliwal.min10@iitbhu.ac.in">kapil.paliwal.min10@iitbhu.ac.in</a>
+</li></ul></li></div>
+				</div>
+			</div>		
+</div>
+<div class = "view_port" id="green_tech">
+
+				
+				<div class="side_info">
+					<h1 ><span>Green Tech</span></h1>
+					
+				</div>
+				
+				<nav class="sec_nav">
+					<ul>
+						<img src="more.png">
+						<li><a href="#green_tech_about">About</a></li>
+						<li><a href="#green_tech_rules">Rules</a></li>
+						<li><a href="#green_tech_prizes">Prizes</a></li>
+						<li><a href="#green_tech_registration">Registration</a></li>
+						<li><a href="#green_tech_value5">Contacts</a></li>
+						
+						
+					</ul>
+					
+				</nav>
+				<div class="info_container"  >
+				<div class="info active" id="green_tech_about">
+				<h1>Introduction</h1>
+				<div id="" class="tab-pane"><blockquote>
+				<hr>
+“Give me a lever long enough and a fulcrum on which to place it, and I shall move the world”
+<small>Archimedes</small>
+</blockquote>
+
+<p>Innovation has been the prime tool for development since the beginning of human civilization. Human mind always has a plethora of ideas and has the dexterity to mould them meticulously. The maxim “Necessity is the mother of invention” rightly clarifies difficult situations inspire ingenious solution. Man has found various ways to quench his thirst for comfort and knowledge. Through the shackles of time, the discovery of fire to miniaturization of complicated circuits into ICs and nanochips, the evolution of our race has revolutionized living. The savvy and sophisticated life today is an outcome of keen observation, ceaseless trials and dedicated learning.</p>
+<p> Modex has always been a platform to bring forth the latent Einstein inside, sculpt the heuristic minds and ideas reflecting the modern world.&nbsp;Carrying this legacy to even greater heights this year ,we  invite you to present your ideas…Turn your eureka sparkle into an engineered model… Buckle up and be a part!!!</p>
+<p>To download the abstract <a href="https://dl.dropbox.com/u/80178480/Abstract_Modex%2713.doc">click here</a></p>
+</div>
+				</div>
+				<div class="info" id="green_tech_rules">
+				<h1>Rules</h1>
+					<div id="" class="tab-pane">
+					<hr>
+					<ol>
+<li> Selected teams would be informed by mail or call one week prior to the event.</li>
+<li> All teams must carry three copies of abstract along with them.</li>
+<li> 220V,50Hz standard AC supply will be provided.</li>
+<li>The teams must adhere to the spirit of healthy competition.</li>
+<li> Judges reserve the right to disqualify any team indulging in misbehavior.</li>
+<li>Every team has to report 30mins prior to the event start on the event site.</li>
+<li> Any team that is not ready at the time specified will be disqualified from the competition automatically</li>
+<li>All students should carry a valid identity card of their respective educational institutes to participate in the event.</li>
+<li>Teams have to submit their final code used(if any)</li>
+<li> Decision of the judges shall be treated as final and binding on all.</li>
+</ol></div>
+				</div>
+				<div class="info" id="green_tech_prizes">
+				<h1>Prizes</h1>
+					<div id="" class="tab-pane">
+					<hr>
+					To construct a working/Non-working Model which can increase the efficiency of present working systems based on the given categories. Consider the aspects of practical application of the model considering cost aspects and its impact on market.
+					<ol>
+<li>A team can consist of maximum 4 members.</li>
+<li> Students from different educational institutions can form a team.</li>
+
+  <li> ABSTRACT ROUND - A soft copy of project abstract has to be submitted before 15th Feb’2013.The abstract format could be downloaded from the website. The abstract should be in Times New Roman, font 12.Teams should send their pseudocode in their abstract(if any).</li>
+<li> VIDEO ROUND – A video of working model has to be submitted by 28th Feb’2013</li>
+<li> MODELS ROUND – The selected models have to be presented during TECHNEX’13 due on 7th to 8thMarch.(except Cyber Modex).</li>
+ <li> ABSTRACT ROUND - A soft copy of project abstract has to be submitted before 15th Feb’2013.The abstract format could be downloaded from the website. The abstract should be in Times New Roman, font 12.Teams should send their pseudocode in their abstract(if any).</li>
+<li> VIDEO ROUND – A video of working model has to be submitted by 28th Feb’2013</li>
+<li> MODELS ROUND – The selected models have to be presented during TECHNEX’13 due on 7th to 8thMarch.(except Cyber Modex).</li>
+<li> PRESENTATION ROUND – Groups shortlisted in model round have to give a PowerPoint presentation on 9th March. The time allotted to each presentation would be 5 minutes.</li>
+</ol></div>
+				</div> 
+				<div class="info" id="green_tech_registration">
+				<div id="" class="tab-pane">
+				<hr>
+				<p>Abstracts could be mailed to <a href="mailto:praveen.ksharma.bce10@iitbhu.ac.in">praveen.ksharma.bce10@iitbhu.ac.in</a> . Subject of the mail should be in the form of Abstract_Event name(Category name).</p>
+<br><br><li>
+Praveen Kumar Sharma <ul type="none"><li> +91-9793747296</li><li><a href="mailto:praveen.ksharma.bce10@iitbhu.ac.in">praveen.ksharma.bce10@iitbhu.ac.in</a><br></li></ul> 
+</li><li>Srijan Misra		<ul type="none"><li>  +91-9415526035</li><li><a href="mailto:srijan.misra.cse10@iitbhu.ac.in">srijan.misra.cse10@iitbhu.ac.in</a><br></li></ul> 
+</li><li>
+Prabhakar Gautam  <ul type="none"><li>    +91-9452406186	</li><li><a href="mailto:prabhakar.gautam.min10@iitbhu.ac.in">prabhakar.gautam.min10@iitbhu.ac.in</a>
+<br></li></ul></li><li>Kapil Paliwal <ul type="none"><li>                          +91-8960876152    </li><li> <a href="mailto: kapil.paliwal.min10@iitbhu.ac.in">kapil.paliwal.min10@iitbhu.ac.in</a>
+</li></ul></li></div>
+				</div>
+				<div class="info" id="green_tech_value5">
+					THIS IS THE CONTENT CORRESPONDING TO THE SECNAV value5
+				</div>
+			</div>
+			
+</div>
+<div class = "view_port" id="social_rural">
+	
+				<div class="side_info">
+					<h1 >Social Rular</h1>
+					
+				</div>
+				
+				<nav class="sec_nav">
+					<ul>
+						<img src="more.png">
+						<li><a href="#social_rural_about">About</a></li>
+						<li><a href="#social_rural_rules">Rules</a></li>
+						<li><a href="#social_rural_prizes">Prizes</a></li>
+						<li><a href="#social_rural_registration">Registration</a></li>
+						<li><a href="#social_rural_value5">Contacts</a></li>
+					</ul>
+					
+				</nav>
+				<div class="info_container" >
+				<div class="info active" id="social_rural_about">
+				<div id="" class="tab-pane"><blockquote>
+“Give me a lever long enough and a fulcrum on which to place it, and I shall move the world”
+<small>Archimedes</small>
+</blockquote>
+
+<p>Innovation has been the prime tool for development since the beginning of human civilization. Human mind always has a plethora of ideas and has the dexterity to mould them meticulously. The maxim “Necessity is the mother of invention” rightly clarifies difficult situations inspire ingenious solution. Man has found various ways to quench his thirst for comfort and knowledge. Through the shackles of time, the discovery of fire to miniaturization of complicated circuits into ICs and nanochips, the evolution of our race has revolutionized living. The savvy and sophisticated life today is an outcome of keen observation, ceaseless trials and dedicated learning.</p>
+<p> Modex has always been a platform to bring forth the latent Einstein inside, sculpt the heuristic minds and ideas reflecting the modern world.&nbsp;Carrying this legacy to even greater heights this year ,we  invite you to present your ideas…Turn your eureka sparkle into an engineered model… Buckle up and be a part!!!</p>
+<p>To download the abstract <a href="https://dl.dropbox.com/u/80178480/Abstract_Modex%2713.doc">click here</a></p>
+</div>
+				</div>
+				<div class="info" id="social_rural_rules">
+					<div id="" class="tab-pane"><ol>
+<li> Selected teams would be informed by mail or call one week prior to the event.</li>
+<li> All teams must carry three copies of abstract along with them.</li>
+<li> 220V,50Hz standard AC supply will be provided.</li>
+<li>The teams must adhere to the spirit of healthy competition.</li>
+<li> Judges reserve the right to disqualify any team indulging in misbehavior.</li>
+<li>Every team has to report 30mins prior to the event start on the event site.</li>
+<li> Any team that is not ready at the time specified will be disqualified from the competition automatically</li>
+<li>All students should carry a valid identity card of their respective educational institutes to participate in the event.</li>
+<li>Teams have to submit their final code used(if any)</li>
+<li> Decision of the judges shall be treated as final and binding on all.</li>
+</ol></div>
+				</div>
+				<div class="info" id="social_rural_prizes">
+					<div id="" class="tab-pane">To construct a working/Non-working Model which can increase the efficiency of present working systems based on the given categories. Consider the aspects of practical application of the model considering cost aspects and its impact on market. </div><div id="Team-Specifications" class="tab-pane"><ol>
+<li>A team can consist of maximum 4 members.</li>
+<li> Students from different educational institutions can form a team.</li>
+</ol></div><div id="Rounds" class="tab-pane"><ol>
+  <li> ABSTRACT ROUND - A soft copy of project abstract has to be submitted before 15th Feb’2013.The abstract format could be downloaded from the website. The abstract should be in Times New Roman, font 12.Teams should send their pseudocode in their abstract(if any).</li>
+<li> VIDEO ROUND – A video of working model has to be submitted by 28th Feb’2013</li>
+<li> MODELS ROUND – The selected models have to be presented during TECHNEX’13 due on 7th to 8thMarch.(except Cyber Modex).</li>
+<li> PRESENTATION ROUND – Groups shortlisted in model round have to give a PowerPoint presentation on 9th March. The time allotted to each presentation would be 5 minutes.</li>
+</ol></div>
+				</div> 
+				<div class="info" id="social_rural_registration">
+				<div id="" class="tab-pane"><p>Abstracts could be mailed to <a href="mailto:praveen.ksharma.bce10@iitbhu.ac.in">praveen.ksharma.bce10@iitbhu.ac.in</a> . Subject of the mail should be in the form of Abstract_Event name(Category name).</p>
+<br><br><li>
+Praveen Kumar Sharma <ul type="none"><li> +91-9793747296</li><li><a href="mailto:praveen.ksharma.bce10@iitbhu.ac.in">praveen.ksharma.bce10@iitbhu.ac.in</a><br></li></ul> 
+</li><li>Srijan Misra		<ul type="none"><li>  +91-9415526035</li><li><a href="mailto:srijan.misra.cse10@iitbhu.ac.in">srijan.misra.cse10@iitbhu.ac.in</a><br></li></ul> 
+</li><li>
+Prabhakar Gautam  <ul type="none"><li>    +91-9452406186	</li><li><a href="mailto:prabhakar.gautam.min10@iitbhu.ac.in">prabhakar.gautam.min10@iitbhu.ac.in</a>
+<br></li></ul></li><li>Kapil Paliwal <ul type="none"><li>                          +91-8960876152    </li><li> <a href="mailto: kapil.paliwal.min10@iitbhu.ac.in">kapil.paliwal.min10@iitbhu.ac.in</a>
+</li></ul></li></div>
+				</div>
+				<div class="info" id="social_rural_value5">
+					THIS IS THE CONTENT CORRESPONDING TO THE SECNAV value5
+				</div>
+			</div>
+</div>
+<div class = "view_port" id="health_care">
+<div class="side_info">
+					<h1 >Health Care</h1>
+					
+				</div>
+				
+				<nav class="sec_nav">
+					<ul><img src="more.png">
+						<li><a href="#health_care_about">About</a></li>
+						<li><a href="#health_care_rules">Rules</a></li>
+						<li><a href="#health_care_prizes">Prizes</a></li>
+						<li><a href="#health_care_registration">Registration</a></li>
+						<li><a href="#health_care_value5">Contacts</a></li>
+					</ul>
+					
+				</nav>
+			<div class="info_container" >
+								
+			</div>
+</div>
+<div class = "view_port" id="open_simulation">
+<div class="side_info">
+					<h1 >Open Simulation</h1>
+					
+				</div>
+				
+				<nav class="sec_nav">
+					<ul><img src="more.png">
+						<li><a href="#open_simulation_about">About</a></li>
+						<li><a href="#open_simulation_rules">Rules</a></li>
+						<li><a href="#open_simulation_prizes">Prizes</a></li>
+						<li><a href="#open_simulation_registration">Registration</a></li>
+						<li><a href="#open_simulation_value5">Contacts</a></li>
+					</ul>
+					
+				</nav>
+		<div class="info_container" >
+								
+		</div>
+</div>
+<div class = "view_port" id="open_hardware">
+<div class="side_info">
+					<h1><span>Open Hardware</span></h1>
+					
+				</div>
+				
+				<nav class="sec_nav">
+					<ul><img src="more.png">
+						<li><a href="#open_hardware_about">About</a></li>
+						<li><a href="#open_hardware_rules">Rules</a></li>
+						<li><a href="#open_hardware_prizes">Prizes</a></li>
+						<li><a href="#open_hardware_registration">Registration</a></li>
+						<li><a href="#open_hardware_value5">Contacts</a></li>
+					</ul>
+					
+				</nav>
+			<div class="info_container" >
+								
+			</div>
+</div>
+
+<!--<script src="skrollr.min.js" type="text/javascript"></script>
+
+
+
+
+<script>
+	var s = skrollr.init();
+</script>-->
+</body>
+</html>

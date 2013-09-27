@@ -1,0 +1,242 @@
+body  {
+	font-family: Trebuchet MS;
+	margin: 0; 
+	padding: 0;
+	text-align: center; 
+	color:#FFF;
+	background-image:url(../images/float/cs6.jpg);
+	background-repeat: no-repeat;	
+	height: 100%;
+	width: 100%;
+	font-size:16px;
+	background-size: 100% auto;
+	z-index: 1;
+}
+img{
+position: relative;
+z-index: 10;
+
+}
+.body #container {
+	position: relative;
+	width: 1000px;
+	border: 0px solid #000000;
+	text-align: left;
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+	background-image:url(../images/back.png);
+	background-color: none;
+	background-repeat: no-repeat;
+} 
+
+
+.body #header { 
+	height: 60px; 
+	padding: 0 0 0 20;
+	text-align:left;
+} 
+
+.body #header {
+	height: 256px;
+	text-align: right;
+	
+	background-repeat: no-repeat;
+
+}
+.body #mainlogo{
+border: 0px solid #BDC8C8;
+	-webkit-border-radius: .7em;
+	-moz-border-radius: .7em;
+	border-radius: .7em;
+}
+.body #rightcont{
+border: 0px solid #BDC8C8;
+	-webkit-border-radius: .7em;
+	-moz-border-radius: .7em;
+	border-radius: .7em;
+}
+.body #nav {
+	width:100%;
+	background-image:url(../images/back.png);
+	border: 0px solid #BDC8C8;
+	-webkit-border-radius: .7em;
+	-moz-border-radius: .7em;
+	border-radius: .7em;
+}
+.body .navURL { 
+	
+	padding:5px 5px 5px 5px;
+	color:#999;
+	border: 0px solid #BDC8C8;
+	-webkit-border-radius: .1em;
+	-moz-border-radius: .1em;
+	border-radius: .1em;
+} 
+
+.body .navURL:hover {
+	padding:5px 5px 5px 5px;
+	background-color:#FAF202;
+	color:#000;
+} 
+
+.body .navURL:hover a:visited {
+	text-decoration: none;
+	color:#000;
+}
+.body .navURL a:link {
+	text-decoration: none;
+	color: #FFF;
+}
+.body .navURL a:visited {
+	text-decoration: none;
+	color: #FFF;
+}
+
+.body .navURL a:hover {
+	text-decoration: none;
+	color:#000;
+}
+.body .navURL a:active {
+	text-decoration: none;
+	background-color:grey;
+	color:#000;
+}
+
+.body #header h1 {
+	margin: 0; 
+	padding: 10px 0; 
+	
+}
+.body #sidebar1 {
+	position: absolute;
+	top: 430px;
+	left: 5px;
+	width: 150px;
+	background:#0a0a0a;
+	padding: 5px 15px 5px 15px;
+	border-style:solid;
+	border-color:#121212;
+	border-width:1px;
+	text-align: center;
+	font-size:12px;
+	
+}
+.body #sidebar2 {
+	position: absolute;
+	top: 430px;
+	right: 2px;
+	width: 150px;
+	background:#0a0a0a;
+	padding: 15px 10px 15px 20px;
+	border-style:solid;
+	border-color:#121212;
+	border-width:1px;
+	text-align: center;
+}
+
+.glory{
+	font-size:12px;
+	}
+
+.glory  a{
+	color:#d2e4ff;
+	}
+.body #mainContent { 
+	margin: 0 200px 0 200px; 
+	padding: 0 10px; 
+	min-height:500px;
+}
+
+.body #mainContent h1{ 
+	color:#9ba922;
+	}
+
+.body #footer { 
+	padding: 0 10px 0 20px; 
+	background:;
+	border-style:solid;
+	border-width:1px;
+	border-color:#101010;
+} 
+.body #footer p {
+	margin: 0; 
+	padding: 10px 0;
+	text-align: center;
+}
+.fltrt {
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { 
+	margin-right: 8px;
+}
+#table_row{
+	height: 147px;
+	top: 430px;
+	left: 5px;
+	width: 161px;
+	/*background:#0a0a0a;*/
+	padding: 5px 15px 5px 15px;
+	border: 2px solid #BDC8C8;
+	-webkit-border-radius: .7em;
+	-moz-border-radius: .7em;
+	border-radius: .7em;
+	text-align: center;
+	font-size:12px;
+	float: left;
+}
+.body #right_content{
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 10px;
+	float: left;
+	position:  relative;
+	width: 60%;
+		left: 0px;
+	border: 0px solid #BDC8C8;
+	-webkit-border-radius: .7em;
+	-moz-border-radius: .7em;
+	border-radius: .7em;
+}
+
+
+#fifalogo {
+	z-index: 1000;
+  left:66%;
+  opacity:0.8;
+  position:absolute;
+  top:88%;
+  width:17%;
+  height: 80px;
+border: 1px solid #BDC8C8;
+	-webkit-border-radius: .7em;
+	-moz-border-radius: .7em;
+	border-radius: .7em;
+}
+#nfslogo {
+	z-index: 1000;
+  left:44.5%;
+  opacity:0.8;
+  position:absolute;
+  top:88%;
+  width:17%;
+border: 1px solid #BDC8C8;
+	-webkit-border-radius: .7em;
+	-moz-border-radius: .7em;
+	border-radius: .7em;
+  height: 80px;
+}
+#dotalogo {
+	z-index: 1000;
+  left:23%;
+  opacity:0.8;
+  position:absolute;
+  top:88%;
+	height: 80px; 
+  width:17%;
+	border: 0px solid #BDC8C8;
+	-webkit-border-radius: .7em;
+	-moz-border-radius: .7em;
+	border-radius: .7em;
+}

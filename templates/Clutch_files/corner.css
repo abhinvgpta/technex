@@ -1,0 +1,36 @@
+.spiffy{display:block}
+.spiffy *{
+  display:block;
+  height:1px;
+  overflow:hidden;
+  font-size:.01em;
+  background:#b20000}
+.spiffy1{
+  margin-left:3px;
+  margin-right:3px;
+  padding-left:1px;
+  padding-right:1px;
+  border-left:1px solid #870000;
+  border-right:1px solid #870000;
+  background:#9f0000}
+.spiffy2{
+  margin-left:1px;
+  margin-right:1px;
+  padding-right:1px;
+  padding-left:1px;
+  border-left:1px solid #6f0000;
+  border-right:1px solid #6f0000;
+  background:#a30000}
+.spiffy3{
+  margin-left:1px;
+  margin-right:1px;
+  border-left:1px solid #a30000;
+  border-right:1px solid #a30000;}
+.spiffy4{
+  border-left:1px solid #870000;
+  border-right:1px solid #870000}
+.spiffy5{
+  border-left:1px solid #9f0000;
+  border-right:1px solid #9f0000}
+.spiffyfg{
+  background:#b20000}
