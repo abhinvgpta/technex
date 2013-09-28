@@ -1,6 +1,6 @@
 # Django settings for technex project.
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config()
+
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 # Allow all host headers
@@ -27,14 +27,14 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        #'NAME': 'technex',                      # Or path to database file if using sqlite3.
-        #'USER': 'root',                      # Not used with sqlite3.
-        #'PASSWORD': 'dayornight',                  # Not used with sqlite3.
-        #'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-        #'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'NAME': 'technex',                      # Or path to database file if using sqlite3.
+        'USER': 'root',                      # Not used with sqlite3.
+        'PASSWORD': 'dayornight',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
-
+DATABASES['default'] =  dj_database_url.config()
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
